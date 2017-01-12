@@ -40,6 +40,11 @@ public class AtletaController {
         return atletaRepository.findAll();
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteAtleta(@PathVariable Long id){
+        atletaRepository.delete(id);
+    }
+
     @GetMapping("/{id}")
     public Atleta findById(@PathVariable Long id) {
         Atleta atleta = atletaRepository.findOne(id);

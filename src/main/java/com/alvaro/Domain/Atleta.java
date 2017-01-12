@@ -19,9 +19,10 @@ public class Atleta {
     private long id;
     private String nombre;
     private String apellidos;
+    @JsonIgnore
     private LocalDate fechaNacimiento;
     private String nacionalidad;
-    @OneToMany(mappedBy = "atleta")
+    @OneToMany(mappedBy = "atleta", cascade = CascadeType.ALL)
     @JsonIgnore
     private Set<Medalla> medallas = new HashSet<>();
     public Atleta() {
